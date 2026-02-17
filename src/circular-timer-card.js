@@ -7,8 +7,8 @@ class CircularTimerCard extends LitElement {
 	constructor() {
 		super();
 
-		// Defaults
-		this._bins = 36;
+		// Defaults - 60 bars like a clock (one per minute)
+		this._bins = 60;
 		this._padAngle = 1;
 		this._cornerRadius = 4;
 		this._defaultTimerFill = getComputedStyle(
@@ -88,9 +88,8 @@ class CircularTimerCard extends LitElement {
 			}
 		}
 
-		if (config.bins) {
-			this._bins = config.bins;
-		}
+		// Always use 60 bins (one per minute) regardless of config
+		this._bins = 60;
 		this._seqmentSize = 360 / this._bins;
 
 		if (config.pad_angle) {
@@ -232,10 +231,11 @@ class CircularTimerCard extends LitElement {
 				rem_sec = d_sec;
 			}
 		}
-		var proc = rem_sec / d_sec;
-
-		var limitBin = Math.floor(this._bins * proc);
+		// Calculate remaining minutes (one bar per minute, like a clock)
+		var rem_minutes = Math.ceil(rem_sec / 60);
+		var limitBin = Math.min(rem_minutes, 60);
 		var colorData = this._generateArcColorData(limitBin);
+		var proc = rem_minutes / 60; // For text color gradient
 		var textColor = this._getTextColor(proc);
 
 		var display_rem_sec = this._getTimeString(rem_sec);
