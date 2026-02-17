@@ -3,7 +3,7 @@ import { css, html, LitElement, svg } from "lit";
 import { repeat } from "lit/directives/repeat.js";
 import pkg from "../package.json";
 
-class CircularTimerCard extends LitElement {
+class VisualCountdownCard extends LitElement {
 	constructor() {
 		super();
 
@@ -560,9 +560,9 @@ class CircularTimerCard extends LitElement {
 	}
 }
 
-customElements.define("circular-timer-card", CircularTimerCard);
+customElements.define("visual-countdown-card", VisualCountdownCard);
 
 console.info(
-	`%c circular-timer-card | Version ${pkg.version} `,
+	`%c visual-countdown-card | Version ${pkg.version} `,
 	"color: white; font-weight: bold; background: #FF4F00",
 );

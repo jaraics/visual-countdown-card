@@ -3,10 +3,10 @@ import { defineConfig } from "@rspack/cli";
 export default defineConfig({
 	devtool: false,
 	entry: {
-		main: "./src/circular-timer-card.js",
+		main: "./src/visual-countdown-card.js",
 	},
 	output: {
 		clean: true,
-		filename: "circular-timer-card.js",
+		filename: "visual-countdown-card.js",
 	},
 });

@@ -1,7 +1,7 @@
 {
-	"name": "circular-timer-card",
-	"version": "0.1.0",
-	"description": "Circular timer card",
+	"name": "visual-countdown-card",
+	"version": "1.1.0",
+	"description": "Visual Countdown timer card",
 	"type": "module",
 	"scripts": {
 		"build": "rspack build",
@@ -14,6 +14,7 @@
 		"timer"
 	],
 	"author": "Kārlis Vagalis",
+	"contributors": ["jaraics"],
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "2.3.9",
